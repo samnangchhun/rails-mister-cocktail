@@ -1,8 +1,10 @@
-<h1>Add new cocktail</h1>
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit value: "add" , class: "btn btn-primary"%>
-<% end %>
+<div class="form-new-cocktail">
+  <h1>Add new cocktail</h1>
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit value: "add" , class: "btn-ghost"%>
+  <% end %>
+</div>
 
 

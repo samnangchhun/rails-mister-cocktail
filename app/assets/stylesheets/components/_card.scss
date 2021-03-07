@@ -1,65 +1,104 @@
-.container-card .card-cocktail {
+.container-card {
   width: 900px;
   display: grid;
-  margin-top: 100px;
-  margin-left: 150px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin-right: 150px;
+  margin-left: 80px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 
 }
 
+.card-cocktail {
+  position:relative;
+  height: 300px;
+  width: 400px;
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px gray;
+  opacity: 0,5;
+
+
+}
+.card-cocktail:hover {
+  opacity: 1,0;
+}
+.card-cocktail .far{
+  font-size: 20px;
+  font-weight: lighter;
+  color: white;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+
+
+}
 .card-cocktail p {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bolder;
-  font-family:'Manrope', sans-serif;
+  font-family:'Manrope',700, sans-serif;
   text-decoration: none;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 
 }
 
+// card cocktail show
+
 .card-product {
-  height: 500px;
-  width : 800px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: flex-start;
-  align-content: space-around;
-  position: relative;
+  justify-content: center;
+}
+
+.card-product-photo {
+  margin-top: 80px;
+  width: 500px;
 }
 
 .card-product img {
-  height: 100%;
-  width: 400px;
   object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px gray;
 }
 
-.card-product h1 {
+// card info, right part
 
+.card-right {
+  width: 400px;
+  height: 600px;
+  margin-top: 80px;
+  background-color: #d9d9d9;
+  border-left: none;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px gray;
+  display:flex;
+  justify-content: center;
+
+}
+
+.card-product-infos h1 {
   font-size: 30px;
   font-weight: bold;
-  // margin: 30 auto;
-  text-align: center;
-  margin-top: 30px;
+  font-family:'Manrope',700, sans-serif;
 }
-.card-product h2 {
-
-  font-size: 20px;
-  font-weight: bold;
+.card-product-infos h2 {
+  font-size: 150px;
   margin: 0 auto;
-  text-align: center;
   margin-bottom: 5px;
+  font-family:'Manrope',500, sans-serif;
 }
 
-.card-product p {
+.card-product-infos p {
   font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 5px;
-  margin-top: 2px;
 }
 
-.card-product .btn {
+.btn {
   position: absolute;
   bottom: 0;
   top: 15px;
@@ -68,10 +107,3 @@
 }
 
 
-.card-product .card-product-infos {
-  text-align: center;
-  height: 100%;
-  width: 400px;
-  font-size: 12px;
-
-}

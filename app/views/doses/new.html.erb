@@ -1,8 +1,8 @@
 <h1>Edit your fomula</h1>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-<%= f.input :description%>
 <%= f.input :ingredient_id, collection: Ingredient.all%>
-<%= f.submit value: "summit"%>
-<%= link_to "Back", cocktails_path, class: "btn btn-primary"%>
+<%= f.input :description%>
+<%= f.submit value: "summit", class: "btn-ghost" %>
+<%= link_to "Back", cocktails_path, class: "btn-ghost"%>
 <% end %>
 

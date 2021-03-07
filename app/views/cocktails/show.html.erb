@@ -1,41 +1,32 @@
-<!-- <div class="cards">
-
-  <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  <h2><%= @cocktail.name %></h2>
-    <div> <% @cocktail.doses.each do |dose| %></div>
-      <%= dose.ingredient.name %>
-      <%= dose.description %>
-      <%= link_to "delete",dose_path(dose.id), method: :delete %>
-    <%end%>
-</div> -->
-
-
-
-
-
+<div class="btn">
+  <%= link_to (""), cocktails_path, class: "fas fa-chevron-left" %>
+</div>
 <div class="card-product">
-  <img src="https://i.pinimg.com/564x/d9/f4/ca/d9f4cabea11f55ef475ea82f1e6cf260.jpg" />
-  <div class="card-product-infos">
-
-  <h1><%= @cocktail.name %></h1>
-
-  <p>description of the cocktail</p>
-
-  <h2>Ingredients</h2>
-  <%= link_to ("edit"), new_cocktail_dose_path(@cocktail.id)%>
-  <i class="far fa-edit"></i>
-   <div> <% @cocktail.doses.each do |dose| %></div>
-      <%= dose.ingredient.name %>
-      <%= dose.description %>
-      <%= link_to "delete",dose_path(dose.id), method: :delete %>
-    <%end%>
+  <div class="card-product-photo">
+    <% photo = @cocktail.photo.attached? ? @cocktail.photo.key : "beenm9hmytd46g4gukh8" %>
+    <%= cl_image_tag photo, width: 500, height: 600, crop: :fill%>
   </div>
-  <div class="btn">
-    <%= link_to "Back", cocktails_path, class: "btn-ghost"%>
-<!--     <%= link_to "Edit", new_cocktail_dose_path(@cocktail.id), class: "btn-ghost"%> -->
+
+<div class="card-right" class="text-center">
+  <div class="card-product-info">
+   <h1><%= @cocktail.name %></h1>
+    <p>description of the cocktail</p>
+    <h2>Ingredients</h2>
+    <%= link_to (""), new_cocktail_dose_path(@cocktail.id), class: "far fa-edit" %>
+    <div> <% @cocktail.doses.each do |dose| %>
+      <p>
+        <%= dose.ingredient.name %>
+        <%= dose.description %>
+        <%= link_to "delete",dose_path(dose.id), method: :delete %>
+      </p>
+      <%end%>
+    </div>
   </div>
 </div>
-<!-- link_to (fa_icon "off"), other_options_go_here -->
+
+
+
+
 
 
 

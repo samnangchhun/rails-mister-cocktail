@@ -18,12 +18,13 @@
 </div>
 <!-- Cards of cocktails  -->
 <div class="container-card">
-   <div class="card-cocktail">
     <% @cocktails.each do |cocktail| %>
-      <%= cl_image_tag("beenm9hmytd46g4gukh8", width: 400, height: 300, crop: :fill)%>
-      <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+    <% photo = cocktail.photo.attached? ? cocktail.photo.key : "beenm9hmytd46g4gukh8" %>
+      <div class="card-cocktail" style = "background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path photo, width: 400, height:300, crop: :fill%>)">
+        <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+        <%= link_to (""), cocktail_path(cocktail), class: "far fa-trash-alt", method: :delete %>
+      </div>
     <% end %>
-  </div>
 </div>
 
 
