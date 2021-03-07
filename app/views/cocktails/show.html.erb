@@ -1,15 +1,41 @@
-<h2><%= @cocktail.name %></h2>
-<% @cocktail.doses.each do |dose| %>
-  <%= dose.ingredient.name %>
-  <%= dose.description %>
-  <%= link_to "delete",dose_path(dose.id), method: :delete %>
-<%end%>
+<!-- <div class="cards">
+
+  <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <h2><%= @cocktail.name %></h2>
+    <div> <% @cocktail.doses.each do |dose| %></div>
+      <%= dose.ingredient.name %>
+      <%= dose.description %>
+      <%= link_to "delete",dose_path(dose.id), method: :delete %>
+    <%end%>
+</div> -->
 
 
-<!-- <h2><%= @cocktail.ingredients %></h2> -->
-<%= link_to "Back", cocktails_path, class: "btn btn-primary"%>
-<%= link_to "Edit", new_cocktail_dose_path(@cocktail.id), class: "btn btn-primary"%>
 
+
+
+<div class="card-product">
+  <img src="https://i.pinimg.com/564x/d9/f4/ca/d9f4cabea11f55ef475ea82f1e6cf260.jpg" />
+  <div class="card-product-infos">
+
+  <h1><%= @cocktail.name %></h1>
+
+  <p>description of the cocktail</p>
+
+  <h2>Ingredients</h2>
+  <%= link_to ("edit"), new_cocktail_dose_path(@cocktail.id)%>
+  <i class="far fa-edit"></i>
+   <div> <% @cocktail.doses.each do |dose| %></div>
+      <%= dose.ingredient.name %>
+      <%= dose.description %>
+      <%= link_to "delete",dose_path(dose.id), method: :delete %>
+    <%end%>
+  </div>
+  <div class="btn">
+    <%= link_to "Back", cocktails_path, class: "btn-ghost"%>
+<!--     <%= link_to "Edit", new_cocktail_dose_path(@cocktail.id), class: "btn-ghost"%> -->
+  </div>
+</div>
+<!-- link_to (fa_icon "off"), other_options_go_here -->
 
 
 

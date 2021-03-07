@@ -1,0 +1,20 @@
+.btn-ghost {
+  color: black;
+  border: 1px solid black;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  font-family:'Manrope', sans-serif;
+}
+
+.btn-ghost-white {
+  color: white;
+  border: 1px solid white;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  font-family: 'Manrope', sans-serif;
+  text-decoration: none;
+}
